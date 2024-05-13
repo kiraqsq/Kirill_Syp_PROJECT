@@ -1,0 +1,45 @@
+.gravatar {
+  float: left;
+  margin-right: 10px;
+  width: 18%;
+  height: 18%;
+  margin-top: .2em;
+  margin-left: .6em;
+}
+
+.image_display {
+  width: 70%;
+}
+
+span .total_values {
+  padding: 10%;
+}
+
+.pagination > li > a
+{
+  background-color: white;
+  color: black;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+  color: gray;
+  background-color: #eee;
+  border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+  color: white;
+  background-color: dimgray;
+  border: solid 1px dimgray;
+}
+
+.pagination > .active > a:hover
+{
+  background-color: darkgray;
+  border: solid 1px darkgray;
+}

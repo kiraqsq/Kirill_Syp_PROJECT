@@ -1,0 +1,38 @@
+%header
+  %nav.navbar.navbar-default
+    .container-fluid
+      .navbar-header
+        %button.navbar-toggle.collapsed{type: "button", "data-toggle": "collapse", "data-target": "#alignment-example", "aria-expanded": "false"}
+          %span.sr-only
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{"aria-current" => "page", href: index_path}= t('.home')
+
+      .collapse.navbar-collapse#alignment-example
+        %ul.nav.navbar-nav
+          %li.nav-item
+            %a.nav-link{href: help_path}= t('.help')
+            
+      %ul.navbar-nav.flex-row.d-none.d-md-flex.mt-2
+        %li.nav-item.me-3.me-lg-1
+          = link_to image_tag("russia.jpg", alt: "", height: "40", width: "40", class: "d-inline-block align-top me-2", title: "Русский" ),
+          locale: :ru, class: "dropdown-item"
+        %li.nav-item.mb-2.mb-lg-0
+          = link_to image_tag("united-kingdom.jpg", alt: "", height: "40", width: "40", class: "d-inline-block align-top me-2", title: "English" ),
+          locale: :en, class: "dropdown-item"
+        %li.nav-item.me-3.me-lg-1
+          %p.nav-link.me-2= I18n.locale  
+      
+      %ul.navbar-nav.flex-row.ml-auto
+        - if signed_in?
+          = gravatar_for current_user
+          %li.nav-item.logged.me-3.me-lg-1.mt-2
+            %p= link_to @current_user.email, current_user, class: "nav-link me-2", title: "Watch profile info"
+          %li.nav-item.me-3.me-lg-1.mt-3
+            = link_to t('.sign_out'), signout_path, method: "delete", class: "link-secondary"
+        - else
+          %li.nav-item.me-3.me-lg-1
+            = link_to t('.sign_in'), signin_path, class: "btn btn-outline-light me-2"
+          %li.nav-item.me-3.me-lg-1
+            = link_to t('.sign_up'), signup_path, class: "btn btn-outline-light"

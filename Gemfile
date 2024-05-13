@@ -47,6 +47,12 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platform: :mri
+  
+  # Лучше отображает ошибки
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :development do
@@ -65,3 +71,35 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "haml-rails", "~> 2.0"
+
+gem "html2haml"
+
+# Use jquery as the JavaScript library
+gem 'jquery-ui-rails'
+gem 'rails-asset-jqueryui'
+
+# Use SАSS for stylesheets
+gem 'sass-rails', '~> 5.0' 
+
+gem 'bootstrap-sass', '3.3.7' # Installed 3.3.7
+
+# Icons fonts
+gem 'font-awesome-sass' #, '~> 4.6.2'
+gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
+
+# Pagination
+gem 'will_paginate'
+
+gem 'kaminari'
+
+
+gem 'activerecord-reset-pk-sequence'
+
+# Use ActiveModel has_secure_password
+
+gem 'bcrypt'
+gem 'active_model_serializers'
+
+# gem 'sqlite3'  (закрыть 'sqlite3')
